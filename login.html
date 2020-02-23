@@ -1,0 +1,450 @@
+<html>
+
+<head>
+    <base href="C:/Users/Alan/Desktop/hackathon/app/" bs-system-element="" bs-hidden="">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Login - DAIL-E</title>
+    <link rel="stylesheet" href="https://bootstrapstudio.io/demo//embed//bootstrap/4/sb-admin-2/bootstrap.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+    <style bs-system-element="" bs-hidden="">
+        html::-webkit-scrollbar {
+            height: 7px;
+            width: 7px;
+            background: #2f363a;
+        }
+
+        html::-webkit-scrollbar-thumb {
+            background: rgb(137, 143, 146);
+        }
+
+        html::-webkit-scrollbar-thumb:hover {
+            background: #767F82;
+        }
+
+        html::-webkit-scrollbar-corner {
+            display: none;
+        }
+
+        html {
+            -webkit-user-select: none;
+            user-select: none;
+            overflow: auto !important;
+        }
+
+        body {
+            min-height: 650px;
+        }
+
+        * {
+            cursor: default !important;
+            pointer-events: all !important;
+        }
+
+        a {
+            cursor: text;
+        }
+
+        img:not([src]):not([srcset]) {
+            background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIg0KCXhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIg0KCXdpZHRoPSIxNjVweCIgaGVpZ2h0PSIxNjVweCIgdmlld0JveD0iMCAwIDE2NSAxNjUiPg0KPHBhdGggZmlsbFJ1bGU9ImV2ZW5vZGQiIGQ9Ik0gMC43OSAyLjIxQyAwLjc5IDIuMjEgMi4yMSAwLjc5IDIuMjEgMC43OSAyLjIxIDAuNzkgMTY0LjIxIDE2Mi43OSAxNjQuMjEgMTYyLjc5IDE2NC4yMSAxNjIuNzkgMTYyLjc5IDE2NC4yMSAxNjIuNzkgMTY0LjIxIDE2Mi43OSAxNjQuMjEgMC43OSAyLjIxIDAuNzkgMi4yMVoiIGZpbGw9InJnYigxOTMsMTk1LDE5NSkiLz48cGF0aCBmaWxsUnVsZT0iZXZlbm9kZCIgZD0iTSAxNjIuNzkgMC43OUMgMTYyLjc5IDAuNzkgMTY0LjIxIDIuMjEgMTY0LjIxIDIuMjEgMTY0LjIxIDIuMjEgMi4yMSAxNjQuMjEgMi4yMSAxNjQuMjEgMi4yMSAxNjQuMjEgMC43OSAxNjIuNzkgMC43OSAxNjIuNzkgMC43OSAxNjIuNzkgMTYyLjc5IDAuNzkgMTYyLjc5IDAuNzlaIiBmaWxsPSJyZ2IoMTkyLDE5NCwxOTUpIi8+PC9zdmc+');
+            width: 80px;
+            height: 80px;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            text-indent: -1000px;
+        }
+
+        /* Stopping css animations on the stage */
+
+        *:not([bs-anim-preview]) {
+            transition: none !important;
+            transition-duration: 0s !important;
+        }
+
+        [bs-dragged] {
+            opacity: 0.3 !important;
+        }
+
+        /* Inline editing */
+
+        [contenteditable=true] {
+            box-shadow: -1px -1px 1px rgba(17, 142, 232, 0.85),
+                1px 1px 1px rgba(17, 142, 232, 0.85),
+                0 0 11px rgba(17, 142, 232, 0.85) !important;
+            outline: none !important;
+            min-height: 1em;
+            cursor: initial !important;
+        }
+
+        [contenteditable=true] *:not([contenteditable=false]) {
+            cursor: initial !important;
+        }
+
+        [contenteditable=true]:empty:before {
+            content: "\00a0\00a0" !important;
+        }
+
+        [contenteditable=true] [contenteditable=false] {
+            box-shadow: 0 0 0 1px rgba(17, 142, 232, 0.85);
+        }
+
+        /* Preventing mouse events for embeds */
+
+        iframe,
+        embed,
+        object,
+        audio {
+            pointer-events: none !important;
+        }
+
+        html.hit-testing iframe,
+        html.hit-testing embed,
+        html.hit-testing object,
+        html.hit-testing audio {
+            pointer-events: all !important;
+        }
+
+
+
+        /* Giving sizes to some elements. */
+
+        div[class*="col-"]:empty:before,
+        form:empty:before,
+        .row:empty:before,
+        .form-row:empty:before,
+        .form-group:empty:before,
+        .container:empty:before,
+        div[class*="container-"]:empty:before {
+            background-color: #eee;
+            content: 'Empty Row';
+            line-height: 40px;
+            text-align: center;
+            display: block;
+            line-height: 80px;
+            font-size: 24px;
+            color: #aaa;
+            font-weight: bold;
+        }
+
+        div[class*="col-"]:empty:before {
+            content: 'Empty Column';
+        }
+
+        form:empty:before {
+            content: 'Empty Form';
+        }
+
+        .form-group:empty:before {
+            content: 'Empty Form Group';
+        }
+
+        form.navbar-form:empty:before {
+            display: inline-block;
+            padding: 0 40px;
+            font-size: 16px;
+            line-height: 36px;
+        }
+
+        .container:empty:before,
+        div[class*="container-"]:empty:before {
+            content: 'Empty Container';
+        }
+
+        .thumbnail img:not([src]) {
+            background-repeat: no-repeat;
+            background-size: 100% 85%;
+            background-position-y: 50%;
+            width: 100%;
+            height: 180px;
+        }
+
+        /* Making the dropdown menus have a white background when they're edited */
+
+        .dropdown-item:active,
+        .dropdown-menu>li>a:focus {
+            background: unset;
+            color: unset;
+        }
+
+        /* This is needed because the li items are 0x0px by default,
+and bootstrap studio can't select them */
+
+        .pagination>li {
+            float: left;
+        }
+
+        /* Iframes without src are colored in gray */
+        .embed-responsive iframe:not([src]) {
+            background-color: #ddd;
+        }
+
+        /* This is needed, otherwise split buttons in input groups break into two lines. */
+
+        .input-group-btn .btn-group>.btn {
+            float: none;
+        }
+
+
+
+        div[class*="col-"]:empty,
+        div.col:empty {
+            display: flex;
+        }
+
+        div[class*="col-"]:empty:before,
+        form:empty:before,
+        .row:empty:before,
+        .form-row:empty:before,
+        .container:empty:before,
+        div[class*="container-"]:empty:before {
+            width: 100%;
+        }
+
+        div.col:empty:before {
+            background-color: #eee;
+            content: 'Empty Column';
+            line-height: 40px;
+            text-align: center;
+            display: block;
+            line-height: 80px;
+            font-size: 24px;
+            color: #aaa;
+            font-weight: bold;
+            width: 100%;
+        }
+
+        .toast-header img:not([src]):not([srcset]) {
+            width: 30px;
+            height: 30px;
+        }
+
+        /* Stopping css spinner animations */
+
+        .spinner-grow:not([bs-spinner-animation]),
+        .spinner-border:not([bs-spinner-animation]) {
+            animation: none;
+        }
+
+        .spinner-grow:not([bs-spinner-animation]) {
+            opacity: 1;
+            transform: scale(.8);
+        }
+
+        .custom-range::-webkit-slider-runnable-track {
+            cursor: inherit;
+        }
+    </style>
+    <link rel="stylesheet" href="https://bootstrapstudio.io/demo//embed/animation/animate.min.css" bs-system-element=""
+        bs-hidden="">
+    <link rel="stylesheet" href="https://bootstrapstudio.io/demo//embed/animation/aos.min.css" bs-system-element=""
+        bs-hidden="">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
+    <link rel="stylesheet" bs-hidden="1" bs-system-element="1"
+        href="https://bootstrapstudio.io/demo//embed/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" bs-hidden="1" bs-system-element="1"
+        href="https://bootstrapstudio.io/demo//embed/fonts/font-awesome.min.css">
+    <link rel="stylesheet" bs-hidden="1" bs-system-element="1"
+        href="https://bootstrapstudio.io/demo//embed/fonts/ionicons.min.css">
+    <link rel="stylesheet" bs-hidden="1" bs-system-element="1"
+        href="https://bootstrapstudio.io/demo//embed/fonts/line-awesome.min.css">
+    <link rel="stylesheet" bs-hidden="1" bs-system-element="1"
+        href="https://bootstrapstudio.io/demo//embed/fonts/material-icons.min.css">
+    <link rel="stylesheet" bs-hidden="1" bs-system-element="1"
+        href="https://bootstrapstudio.io/demo//embed/fonts/simple-line-icons.min.css">
+    <link rel="stylesheet" bs-hidden="1" bs-system-element="1"
+        href="https://bootstrapstudio.io/demo//embed/fonts/typicons.min.css">
+    <link rel="stylesheet" href="https://bootstrapstudio.io/demo//embed/fonts/fontawesome5-overrides.min.css"
+        bs-system-element="" bs-hidden="">
+    <style>
+        .clearfix::after,
+        .calendar ol::after {
+            content: ".";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+        }
+
+        .calendar {
+            border-radius: 10px;
+        }
+
+        .month {
+            font-size: 2rem;
+        }
+
+        @media (min-width: 992px) {
+            .month {
+                font-size: 3.5rem;
+            }
+        }
+
+        .calendar ol li {
+            float: left;
+            width: 14.28571%;
+        }
+
+        .calendar .day-names {
+            border-bottom: 1px solid #eee;
+        }
+
+        .calendar .day-names li {
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .calendar .days li {
+            border-bottom: 1px solid #eee;
+            min-height: 8rem;
+        }
+
+        .calendar .days li .date {
+            margin: 0.5rem 0;
+        }
+
+        .calendar .days li .event {
+            font-size: 0.75rem;
+            padding: 0.4rem;
+            color: white;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            border-radius: 4rem;
+            margin-bottom: 1px;
+        }
+
+        .calendar .days li .event.span-2 {
+            width: 200%;
+        }
+
+        .calendar .days li .event.begin {
+            border-radius: 1rem 0 0 1rem;
+        }
+
+        .calendar .days li .event.end {
+            border-radius: 0 1rem 1rem 0;
+        }
+
+        .calendar .days li:nth-child(n + 29) {
+            border-bottom: none;
+        }
+
+        .calendar .days li.outside .date {
+            color: #ddd;
+        }
+    </style>
+    <style>
+        .row-striped:nth-of-type(odd) {
+            background-color: #efefef;
+            border-left: 10px #cd3333 solid;
+        }
+
+        .row-striped:nth-of-type(even) {
+            background-color: #ffffff;
+            border-left: 15px #efefef solid;
+        }
+
+        .row-striped {
+            padding: 15px 0;
+            margin-top: 15px;
+        }
+
+        .container {
+            padding-top: 5px;
+        }
+
+        .date-green {
+            background-color: #cd3333;
+        }
+
+        .badge-grey {
+            background-color: #efefef;
+        }
+    </style>
+    <style>
+        .row-striped:nth-of-type(odd) {
+            background-color: #efefef;
+            border-left: 10px #cd3333 solid;
+        }
+
+        .row-striped:nth-of-type(even) {
+            background-color: #ffffff;
+            border-left: 15px #efefef solid;
+        }
+
+        .row-striped {
+            padding: 15px 0;
+            margin-top: 15px;
+        }
+
+        .date-green {
+            background-color: #cd3333;
+        }
+
+        .badge-grey {
+            background-color: #efefef;
+        }
+    </style>
+    <style bs-system-element="" bs-hidden=""></style>
+</head>
+
+<body class="bg-gradient-primary">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-9 col-lg-12 col-xl-10">
+                <div class="card shadow-lg o-hidden border-0 my-5">
+                    <div class="card-body p-0">
+                        <div class="row">
+                            <div class="col-lg-6 d-none d-lg-flex">
+                                <div class="flex-grow-1 bg-login-image" style="  background-image: url(&quot;blob:https://bootstrapstudio.io/e02d67c2-329c-408c-9e34-827ffb636bf7&quot;);
+"></div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="p-5">
+                                    <div class="text-center">
+                                        <h4 class="text-dark mb-4">Welcome Back!</h4>
+                                    </div>
+                                    <form class="user">
+                                        <div class="form-group"><input type="email"
+                                                class="form-control form-control-user" id="exampleInputEmail"
+                                                aria-describedby="emailHelp" placeholder="Enter Email Address..."
+                                                name="email" required=""></div>
+                                        <div class="form-group"><input type="password"
+                                                class="form-control form-control-user" id="exampleInputPassword"
+                                                placeholder="Password" name="password" required=""></div>
+                                        <div class="form-group">
+                                            <div class="custom-control custom-checkbox small">
+                                                <div class="form-check"><input type="checkbox"
+                                                        class="form-check-input custom-control-input"
+                                                        id="formCheck-1"><label
+                                                        class="form-check-label custom-control-label"
+                                                        for="formCheck-1">Remember Me</label></div>
+                                            </div>
+                                        </div><button class="btn btn-primary btn-block text-white btn-user"
+                                            type="submit">Login</button>
+                                    </form>
+                                    <div class="text-center" style="  padding-top: 10px;
+"><a class="small" href="forgot-password.html">Forgot Password?</a></div>
+                                    <div class="text-center"><a class="small" href="register.html">Sign Up</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,560 @@
+<html>
+
+<head>
+    <base href="C:/Users/Alan/Desktop/hackathon/app/" bs-system-element="" bs-hidden="">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Profile - DAIL-E</title>
+    <link rel="stylesheet" href="https://bootstrapstudio.io/demo//embed//bootstrap/4/sb-admin-2/bootstrap.min.css">
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <style bs-system-element="" bs-hidden="">
+        html::-webkit-scrollbar {
+            height: 7px;
+            width: 7px;
+            background: #2f363a;
+        }
+
+        html::-webkit-scrollbar-thumb {
+            background: rgb(137, 143, 146);
+        }
+
+        html::-webkit-scrollbar-thumb:hover {
+            background: #767F82;
+        }
+
+        html::-webkit-scrollbar-corner {
+            display: none;
+        }
+
+        html {
+            -webkit-user-select: none;
+            user-select: none;
+            overflow: auto !important;
+        }
+
+        body {
+            min-height: 650px;
+        }
+
+        * {
+            cursor: default !important;
+            pointer-events: all !important;
+        }
+
+        a {
+            cursor: text;
+        }
+
+        img:not([src]):not([srcset]) {
+            background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIg0KCXhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIg0KCXdpZHRoPSIxNjVweCIgaGVpZ2h0PSIxNjVweCIgdmlld0JveD0iMCAwIDE2NSAxNjUiPg0KPHBhdGggZmlsbFJ1bGU9ImV2ZW5vZGQiIGQ9Ik0gMC43OSAyLjIxQyAwLjc5IDIuMjEgMi4yMSAwLjc5IDIuMjEgMC43OSAyLjIxIDAuNzkgMTY0LjIxIDE2Mi43OSAxNjQuMjEgMTYyLjc5IDE2NC4yMSAxNjIuNzkgMTYyLjc5IDE2NC4yMSAxNjIuNzkgMTY0LjIxIDE2Mi43OSAxNjQuMjEgMC43OSAyLjIxIDAuNzkgMi4yMVoiIGZpbGw9InJnYigxOTMsMTk1LDE5NSkiLz48cGF0aCBmaWxsUnVsZT0iZXZlbm9kZCIgZD0iTSAxNjIuNzkgMC43OUMgMTYyLjc5IDAuNzkgMTY0LjIxIDIuMjEgMTY0LjIxIDIuMjEgMTY0LjIxIDIuMjEgMi4yMSAxNjQuMjEgMi4yMSAxNjQuMjEgMi4yMSAxNjQuMjEgMC43OSAxNjIuNzkgMC43OSAxNjIuNzkgMC43OSAxNjIuNzkgMTYyLjc5IDAuNzkgMTYyLjc5IDAuNzlaIiBmaWxsPSJyZ2IoMTkyLDE5NCwxOTUpIi8+PC9zdmc+');
+            width: 80px;
+            height: 80px;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            text-indent: -1000px;
+        }
+
+        /* Stopping css animations on the stage */
+
+        *:not([bs-anim-preview]) {
+            transition: none !important;
+            transition-duration: 0s !important;
+        }
+
+        [bs-dragged] {
+            opacity: 0.3 !important;
+        }
+
+        /* Inline editing */
+
+        [contenteditable=true] {
+            box-shadow: -1px -1px 1px rgba(17, 142, 232, 0.85),
+                1px 1px 1px rgba(17, 142, 232, 0.85),
+                0 0 11px rgba(17, 142, 232, 0.85) !important;
+            outline: none !important;
+            min-height: 1em;
+            cursor: initial !important;
+        }
+
+        [contenteditable=true] *:not([contenteditable=false]) {
+            cursor: initial !important;
+        }
+
+        [contenteditable=true]:empty:before {
+            content: "\00a0\00a0" !important;
+        }
+
+        [contenteditable=true] [contenteditable=false] {
+            box-shadow: 0 0 0 1px rgba(17, 142, 232, 0.85);
+        }
+
+        /* Preventing mouse events for embeds */
+
+        iframe,
+        embed,
+        object,
+        audio {
+            pointer-events: none !important;
+        }
+
+        html.hit-testing iframe,
+        html.hit-testing embed,
+        html.hit-testing object,
+        html.hit-testing audio {
+            pointer-events: all !important;
+        }
+
+
+
+        /* Giving sizes to some elements. */
+
+        div[class*="col-"]:empty:before,
+        form:empty:before,
+        .row:empty:before,
+        .form-row:empty:before,
+        .form-group:empty:before,
+        .container:empty:before,
+        div[class*="container-"]:empty:before {
+            background-color: #eee;
+            content: 'Empty Row';
+            line-height: 40px;
+            text-align: center;
+            display: block;
+            line-height: 80px;
+            font-size: 24px;
+            color: #aaa;
+            font-weight: bold;
+        }
+
+        div[class*="col-"]:empty:before {
+            content: 'Empty Column';
+        }
+
+        form:empty:before {
+            content: 'Empty Form';
+        }
+
+        .form-group:empty:before {
+            content: 'Empty Form Group';
+        }
+
+        form.navbar-form:empty:before {
+            display: inline-block;
+            padding: 0 40px;
+            font-size: 16px;
+            line-height: 36px;
+        }
+
+        .container:empty:before,
+        div[class*="container-"]:empty:before {
+            content: 'Empty Container';
+        }
+
+        .thumbnail img:not([src]) {
+            background-repeat: no-repeat;
+            background-size: 100% 85%;
+            background-position-y: 50%;
+            width: 100%;
+            height: 180px;
+        }
+
+        /* Making the dropdown menus have a white background when they're edited */
+
+        .dropdown-item:active,
+        .dropdown-menu>li>a:focus {
+            background: unset;
+            color: unset;
+        }
+
+        /* This is needed because the li items are 0x0px by default,
+and bootstrap studio can't select them */
+
+        .pagination>li {
+            float: left;
+        }
+
+        /* Iframes without src are colored in gray */
+        .embed-responsive iframe:not([src]) {
+            background-color: #ddd;
+        }
+
+        /* This is needed, otherwise split buttons in input groups break into two lines. */
+
+        .input-group-btn .btn-group>.btn {
+            float: none;
+        }
+
+
+
+        div[class*="col-"]:empty,
+        div.col:empty {
+            display: flex;
+        }
+
+        div[class*="col-"]:empty:before,
+        form:empty:before,
+        .row:empty:before,
+        .form-row:empty:before,
+        .container:empty:before,
+        div[class*="container-"]:empty:before {
+            width: 100%;
+        }
+
+        div.col:empty:before {
+            background-color: #eee;
+            content: 'Empty Column';
+            line-height: 40px;
+            text-align: center;
+            display: block;
+            line-height: 80px;
+            font-size: 24px;
+            color: #aaa;
+            font-weight: bold;
+            width: 100%;
+        }
+
+        .toast-header img:not([src]):not([srcset]) {
+            width: 30px;
+            height: 30px;
+        }
+
+        /* Stopping css spinner animations */
+
+        .spinner-grow:not([bs-spinner-animation]),
+        .spinner-border:not([bs-spinner-animation]) {
+            animation: none;
+        }
+
+        .spinner-grow:not([bs-spinner-animation]) {
+            opacity: 1;
+            transform: scale(.8);
+        }
+
+        .custom-range::-webkit-slider-runnable-track {
+            cursor: inherit;
+        }
+    </style>
+    <link rel="stylesheet" href="https://bootstrapstudio.io/demo//embed/animation/animate.min.css" bs-system-element=""
+        bs-hidden="">
+    <link rel="stylesheet" href="https://bootstrapstudio.io/demo//embed/animation/aos.min.css" bs-system-element=""
+        bs-hidden="">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
+    <link rel="stylesheet" bs-hidden="1" bs-system-element="1"
+        href="https://bootstrapstudio.io/demo//embed/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" bs-hidden="1" bs-system-element="1"
+        href="https://bootstrapstudio.io/demo//embed/fonts/font-awesome.min.css">
+    <link rel="stylesheet" bs-hidden="1" bs-system-element="1"
+        href="https://bootstrapstudio.io/demo//embed/fonts/ionicons.min.css">
+    <link rel="stylesheet" bs-hidden="1" bs-system-element="1"
+        href="https://bootstrapstudio.io/demo//embed/fonts/line-awesome.min.css">
+    <link rel="stylesheet" bs-hidden="1" bs-system-element="1"
+        href="https://bootstrapstudio.io/demo//embed/fonts/material-icons.min.css">
+    <link rel="stylesheet" bs-hidden="1" bs-system-element="1"
+        href="https://bootstrapstudio.io/demo//embed/fonts/simple-line-icons.min.css">
+    <link rel="stylesheet" bs-hidden="1" bs-system-element="1"
+        href="https://bootstrapstudio.io/demo//embed/fonts/typicons.min.css">
+    <link rel="stylesheet" href="https://bootstrapstudio.io/demo//embed/fonts/fontawesome5-overrides.min.css"
+        bs-system-element="" bs-hidden="">
+    <style>
+        .clearfix::after,
+        .calendar ol::after {
+            content: ".";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+        }
+
+        .calendar {
+            border-radius: 10px;
+        }
+
+        .month {
+            font-size: 2rem;
+        }
+
+        @media (min-width: 992px) {
+            .month {
+                font-size: 3.5rem;
+            }
+        }
+
+        .calendar ol li {
+            float: left;
+            width: 14.28571%;
+        }
+
+        .calendar .day-names {
+            border-bottom: 1px solid #eee;
+        }
+
+        .calendar .day-names li {
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .calendar .days li {
+            border-bottom: 1px solid #eee;
+            min-height: 8rem;
+        }
+
+        .calendar .days li .date {
+            margin: 0.5rem 0;
+        }
+
+        .calendar .days li .event {
+            font-size: 0.75rem;
+            padding: 0.4rem;
+            color: white;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            border-radius: 4rem;
+            margin-bottom: 1px;
+        }
+
+        .calendar .days li .event.span-2 {
+            width: 200%;
+        }
+
+        .calendar .days li .event.begin {
+            border-radius: 1rem 0 0 1rem;
+        }
+
+        .calendar .days li .event.end {
+            border-radius: 0 1rem 1rem 0;
+        }
+
+        .calendar .days li:nth-child(n + 29) {
+            border-bottom: none;
+        }
+
+        .calendar .days li.outside .date {
+            color: #ddd;
+        }
+    </style>
+    <style>
+        .row-striped:nth-of-type(odd) {
+            background-color: #efefef;
+            border-left: 10px #cd3333 solid;
+        }
+
+        .row-striped:nth-of-type(even) {
+            background-color: #ffffff;
+            border-left: 15px #efefef solid;
+        }
+
+        .row-striped {
+            padding: 15px 0;
+            margin-top: 15px;
+        }
+
+        .container {
+            padding-top: 5px;
+        }
+
+        .date-green {
+            background-color: #cd3333;
+        }
+
+        .badge-grey {
+            background-color: #efefef;
+        }
+    </style>
+    <style>
+        .row-striped:nth-of-type(odd) {
+            background-color: #efefef;
+            border-left: 10px #cd3333 solid;
+        }
+
+        .row-striped:nth-of-type(even) {
+            background-color: #ffffff;
+            border-left: 15px #efefef solid;
+        }
+
+        .row-striped {
+            padding: 15px 0;
+            margin-top: 15px;
+        }
+
+        .date-green {
+            background-color: #cd3333;
+        }
+
+        .badge-grey {
+            background-color: #efefef;
+        }
+    </style>
+    <style bs-system-element="" bs-hidden=""></style>
+</head>
+
+<body id="page-top">
+    <div id="wrapper">
+        <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0">
+            <div class="container-fluid d-flex flex-column p-0"><a
+                    class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
+                    <div class="sidebar-brand-icon rotate-n-15"><i class="fas fa-file-medical-alt"></i></div>
+                    <div class="sidebar-brand-text mx-3"><span>Dail-e</span></div>
+                </a>
+                <hr class="sidebar-divider my-0">
+                <ul class="nav navbar-nav text-light" id="accordionSidebar">
+                    <li role="presentation" class="nav-item"><a class="nav-link" href="dashboard.html"><i
+                                class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
+                    <li role="presentation" class="nav-item"><a class="nav-link active" href="daily.html"><i
+                                class="fas fa-clipboard"></i><span>Daily Reports</span></a><a class="nav-link"
+                            href="profile.html"><i class="fas fa-user"></i><span>Patient</span></a></li>
+                    <li role="presentation" class="nav-item"><a class="nav-link" href="admin.html"><i
+                                class="fas fa-table"></i><span>Administration</span></a></li>
+                    <li role="presentation" class="nav-item"><a class="nav-link" href="login.html"><i
+                                class="far fa-user-circle"></i><span>Login</span></a></li>
+                    <li role="presentation" class="nav-item"><a class="nav-link" href="register.html"><i
+                                class="fas fa-user-circle"></i><span>Register</span></a></li>
+                    <li role="presentation" class="nav-item"></li>
+                </ul>
+                <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0"
+                        id="sidebarToggle" type="button"></button></div>
+            </div>
+        </nav>
+        <div class="d-flex flex-column" id="content-wrapper">
+            <div id="content">
+                <nav class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
+                    <div class="container-fluid"><button class="btn btn-link d-md-none rounded-circle mr-3"
+                            id="sidebarToggleTop" type="button"><i class="fas fa-bars"></i></button><a href="#"></a>
+                        <div class="dropdown"><a data-toggle="dropdown" aria-expanded="false" class="dropdown-toggle"
+                                href="#"><i class="fa fa-user fa-fw"></i>Patient: Shayaan</a>
+                            <div role="menu" class="dropdown-menu"><a role="presentation" class="dropdown-item"
+                                    href="#">Kabir Hicks</a><a role="presentation" class="dropdown-item" href="#">Carmen
+                                    Cortes</a><a role="presentation" class="dropdown-item" href="#">Sommer Wong</a>
+                            </div>
+                        </div>
+                        <ul class="nav navbar-nav flex-nowrap ml-auto">
+                            <li class="nav-item dropdown d-sm-none no-arrow"><a data-toggle="dropdown"
+                                    aria-expanded="false" class="dropdown-toggle nav-link" href="#"><i
+                                        class="fas fa-search"></i></a>
+                                <div role="menu" class="dropdown-menu dropdown-menu-right p-3 animated--grow-in"
+                                    aria-labelledby="searchDropdown">
+                                    <form class="form-inline mr-auto navbar-search w-100">
+                                        <div class="input-group"><input type="text"
+                                                class="bg-light form-control border-0 small"
+                                                placeholder="Search for ...">
+                                            <div class="input-group-append"><button class="btn btn-primary py-0"
+                                                    type="button"><i class="fas fa-search"></i></button></div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </li>
+                            <li role="presentation" class="nav-item dropdown no-arrow mx-1">
+                                <div class="nav-item dropdown no-arrow"><a data-toggle="dropdown" aria-expanded="false"
+                                        class="dropdown-toggle nav-link" href="#"><span
+                                            class="badge badge-danger badge-counter">1+</span><i
+                                            class="fas fa-bell fa-fw"></i></a>
+                                    <div role="menu"
+                                        class="dropdown-menu dropdown-menu-right dropdown-list dropdown-menu-right animated--grow-in">
+                                        <h6 class="dropdown-header">alerts center</h6><a
+                                            class="d-flex align-items-center dropdown-item" href="#">
+                                            <div class="mr-3">
+                                                <div class="bg-primary icon-circle"><i
+                                                        class="fas fa-file-alt text-white"></i></div>
+                                            </div>
+                                            <div><span class="small text-gray-500">December 12, 2019</span>
+                                                <p>A new daily report has been added!</p>
+                                            </div>
+                                        </a><a class="text-center dropdown-item small text-gray-500" href="#">Show All
+                                            Alerts</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li role="presentation" class="nav-item dropdown no-arrow mx-1">
+                                <div class="shadow dropdown-list dropdown-menu dropdown-menu-right"
+                                    aria-labelledby="alertsDropdown"></div>
+                            </li>
+                            <li role="presentation" class="nav-item dropdown no-arrow"></li>
+                        </ul>
+                    </div>
+                </nav>
+                <div class="container-fluid">
+                    <h3 class="text-dark mb-4">Daily Reports</h3>
+                    <div class="row mb-3">
+                        <div class="col-lg-4">
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="text-primary d-inline font-weight-bold m-0">Today</h6><button
+                                        class="btn btn-primary btn-sm d-inline float-right" type="button">Add Report<i
+                                            class="fa fa-plus" style="  margin-left: 12px;
+"></i></button>
+                                </div>
+                                <div class="card-body">
+                                    <h4 class="small font-weight-bold">In-home Provider's Report<span
+                                            class="float-right">Submitted at 5 PM</span></h4>
+                                    <h4 class="small font-weight-bold">Community Access Provider's Report<span
+                                            class="float-right">Submitted at 1 PM</span></h4>
+                                </div>
+                            </div>
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="text-primary font-weight-bold m-0">Last Week's Aggregated Reports</h6>
+                                </div>
+                                <div class="card-body">
+                                    <h4 class="small font-weight-bold">In-home Provider's Reports</h4>
+                                    <h4 class="small font-weight-bold">Community Access Provider's Reports</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-8">
+                            <div class="row mb-3 d-none">
+                                <div class="col">
+                                    <div class="card text-white bg-primary shadow">
+                                        <div class="card-body">
+                                            <div class="row mb-2">
+                                                <div class="col">
+                                                    <p class="m-0">Peformance</p>
+                                                    <p class="m-0"><strong>65.2%</strong></p>
+                                                </div>
+                                                <div class="col-auto"><i class="fas fa-rocket fa-2x"></i></div>
+                                            </div>
+                                            <p class="text-white-50 small m-0"><i class="fas fa-arrow-up"></i>&nbsp;5%
+                                                since last month</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="card text-white bg-success shadow">
+                                        <div class="card-body">
+                                            <div class="row mb-2">
+                                                <div class="col">
+                                                    <p class="m-0">Peformance</p>
+                                                    <p class="m-0"><strong>65.2%</strong></p>
+                                                </div>
+                                                <div class="col-auto"><i class="fas fa-rocket fa-2x"></i></div>
+                                            </div>
+                                            <p class="text-white-50 small m-0"><i class="fas fa-arrow-up"></i>&nbsp;5%
+                                                since last month</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="bg-white sticky-footer">
+                <div class="container my-auto">
+                    <div class="text-center my-auto copyright"><span>Copyright © DAIL-E 2020</span></div>
+                </div>
+            </footer>
+        </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
+    </div>
+</body>
+
+</html>
